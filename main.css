@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    font-family: 'Permanent Marker', cursive;
+    margin: 0px auto;
+    /*text-align: center;*/
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: 1px auto;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 3%;
+    width: 100%;
+    /*height: 100%;*/
+}
