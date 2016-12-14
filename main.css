@@ -19,7 +19,12 @@ h1 {
     margin: 0px auto;
 }
 
+.question-identifier {
+    text-decoration: underline;
+}
+
 .large-box {
+    font-family: 'Indie Flower', cursive;
     display: inline-block;
     border: 2px solid gray;
     border-radius: 1%;
@@ -100,4 +105,5 @@ p {
 .btn-right {
     float: right;
 }
+
 
