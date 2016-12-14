@@ -15,13 +15,23 @@
         </header>
         <main class="large-box">
             <div class="question-area">
-
+                <p class="initial-text">Welcome to the Quiz App!</p>
+                <p class="initial-text">Are you ready to take the quiz?!</p>
+                <p class="initial-text">(click start to begin)</p>
             </div>
             <div class="score-area small-box">
-
+                <p>Questions Answered: <span id="num-answered">0/10</span></p>
+                <p>Score: <span id="score">0 correct, 0 incorrect</span></p>
             </div>
             <div class="answer-area small-box">
-
+                <p>The correct answer is:</p>
+                <p>A) Marsupials are Cool!</p>
+                <p>You got it <span class="js-right-or-wrong">right!</span></p>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-right" type="button" name="start">Start</button>
+                <button class="btn btn-left hidden" type="button" name="submit">Submit</button>
+                <button class="btn btn-right hidden" type="button" name="next">Next</button>
             </div>
         </main>
     </div>

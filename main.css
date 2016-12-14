@@ -41,10 +41,14 @@ h1 {
     border: 2px solid gray;
     border-radius: 1%;
     width: 45%;
-    height: 31%;
+    height: 22%;
     margin: 2.5%;
     padding: 10px;
     float: left;
+}
+
+.small-box p {
+    margin: 10px 0px;
 }
 
 .score-area {
@@ -55,6 +59,45 @@ h1 {
 
 }
 
+.js-right-or-wrong { /*class or id?*/
+    text-decoration: underline;
+}
+
 p {
     font-family: 'Indie Flower', cursive;
+    font-size: 19px;
 }
+
+/*.question-area p {
+    font-size: 32px;
+    text-align: center;
+}*/
+
+.initial-text {
+    font-size: 32px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    width: 20%;
+    padding: 10px;
+    margin: 0px 2.5%;
+}
+
+.btn-left {
+    float: right;
+}
+
+/*.btn-center {
+    margin-right: 17.5%;
+    margin-left: 17.5%;
+}*/
+
+.btn-right {
+    float: right;
+}
+
