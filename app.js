@@ -93,8 +93,9 @@ function renderQuestionArea(state, element){
 }
 
 function renderAnswerArea(state, element){
+    var index = state.currentIndex;
     var answerAreaText = '<p class="initial-text-answer-area">The correct answer is:</p>' +
-                '<p class="initial-text-answer-area">'+ state.questionSets.answer +'</p>' +
+                '<p class="initial-text-answer-area">'+ state.questionSets[index].answer +'</p>' +
                 '<p class="initial-text-answer-area">answer goes <span class="js-right-or-wrong">here!</span></p>'
     $(".answer-area p").remove();
     $(".answer-area").append(answerAreaText);
