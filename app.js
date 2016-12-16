@@ -8,7 +8,8 @@ var state = {
             b: "Dippy",
             c: "Grumpy",
             d: "Dopey",
-            answer: "b"  
+            answer: "b",
+            correct: ""  
         },
         {
             id: 1,
@@ -17,7 +18,8 @@ var state = {
             b: "A harp",
             c: "A sword",
             d: "The goose",
-            answer: "c"  
+            answer: "c",
+            correct: ""    
         },
         {
             id: 2,
@@ -26,7 +28,8 @@ var state = {
             b: "Belle",
             c: "Snow White",
             d: "Cinderella",
-            answer: "d"  
+            answer: "d",
+            correct: ""    
         },
         {
             id: 3,
@@ -35,7 +38,8 @@ var state = {
             b: "Pinocchio",
             c: "Cinderella",
             d: "Briar Rose",
-            answer: "b"  
+            answer: "b",  
+            correct: ""
         },
         {
             id: 4,
@@ -44,17 +48,57 @@ var state = {
             b: "Thumbelina",
             c: "Red Rose",
             d: "Sleeping Beauty",
-            answer: "d"  
+            answer: "d",
+            correct: ""    
         }
-    ]
+    ],
+    answer: "",
+    correct: "",
+    counterCorrect: 0,
+    currentIndex: 0,
+    route: ""
 };
 
 //State Functions
+function setStart(state, route){
+    state.route = route;
+}
+//Update answer correct
+function updateAnswer(state, questionIndex, answer){
+    state.questionSets[questionIndex].correct = answer;
+}
 
+// Update all variables
+
+//Start Over (onLast)
 
 
 //Render-State Functions
+function renderStart(state, element){
 
+}
+
+function renderQuestionArea(state, element){
+    var index = state.currentIndex;
+    //var inputLabel = Object.keys(state.questionSets[index].)
+    $("span.question-identifier").text(state.currentIndex + 1);
+    $("#question-string").text(state.questionSets[index].question);
+    //&nbspA) Happy
+    console.log(state.questionSets[index].a);
+    $("#a label").text(" A) " + state.questionSets[index].a);
+    $("#b label").text(" B) " + state.questionSets[index].b);
+    $("#c label").text(" C) " + state.questionSets[index].c);
+    $("#d label").text(" D) " + state.questionSets[index].d);
+    //state.currentIndex++;
+}
+
+function renderAnswerArea(state, element){
+    var answerAreaText = '<p class="initial-text-answer-area">The correct answer is:</p>' +
+                '<p class="initial-text-answer-area">'+ state.questionSets.answer +'</p>' +
+                '<p class="initial-text-answer-area">answer goes <span class="js-right-or-wrong">here!</span></p>'
+    $(".answer-area p").remove();
+    $(".answer-area").append(answerAreaText);
+}
 
 
 //Event Listeners

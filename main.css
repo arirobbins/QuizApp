@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #aaccdc;
+}
+
 header {
     font-family: 'Permanent Marker', cursive;
     margin: 0px auto;
@@ -26,6 +30,7 @@ h1 {
 .large-box {
     font-family: 'Indie Flower', cursive;
     display: inline-block;
+    background-color: #eab1c7;
     border: 2px solid gray;
     border-radius: 1%;
     width: 100%;
@@ -36,6 +41,7 @@ h1 {
 .question-area {
     border: 2px solid gray;
     border-radius: 1%;
+    background-color: white;
     width: 95%;
     height: 60%;
     margin: 10px auto;
@@ -44,6 +50,7 @@ h1 {
 
 .small-box {
     border: 2px solid gray;
+    background-color: white;
     border-radius: 1%;
     width: 45%;
     height: 22%;

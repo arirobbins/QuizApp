@@ -15,17 +15,29 @@
         </header>
         <main class="large-box">
             <div class="question-area">
-                <p class="initial-text">Welcome to the Quiz App!</p>
-                <p class="initial-text">Are you ready to take the quiz?!</p>
-                <p class="initial-text">(click start to begin)</p>
-                <div id="question-block" class="hidden">
-                    <h2 class="question-identifier">Question <span class="question-identifier">1</span></h2>
-                    <p>Which of these is not one of the seven dwarves?</p>
+                <p class="initial-text hidden">Welcome to the Quiz App!</p>
+                <p class="initial-text hidden">Are you ready to take the quiz?!</p>
+                <p class="initial-text hidden">(click start to begin)</p>
+                <div id="question-block">
+                    <h2 class="question-identifier">Question <span class="question-identifier"></span></h2>
+                    <p id="question-string"></p>
                     <form action="">
-                        <input id="a" type="radio" name="option" value="a"> &nbspA) Happy<br><br>
-                        <input id="b"type="radio" name="option" value="b"> &nbspB) Dippy<br><br>
-                        <input id="c"type="radio" name="option" value="c"> &nbspC) Grumpy<br><br>
-                        <input id="d"type="radio" name="option" value="d"> &nbspD) Dopey<br>
+                        <p id="a">
+                            <input type="radio" name="option" value="a"/>
+                            <label for="a"></label>
+                        </p>
+                        <p id="b">
+                            <input type="radio" name="option" value="b"/>
+                            <label for="b"></label>
+                        </p>
+                        <p id="c">
+                            <input type="radio" name="option" value="c"/>
+                            <label for="c"></label>
+                        </p>
+                        <p id="d">
+                            <input type="radio" name="option" value="d"/>
+                            <label for="d"></label>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -34,9 +46,9 @@
                 <p>Score: <span id="score">0 correct, 0 incorrect</span></p>
             </div>
             <div class="answer-area small-box">
-                <p>When a question is</p>
-                <p>submitted, the correct</p>
-                <p>answer goes <span class="js-right-or-wrong">here!</span></p>
+                <p class="initial-text-answer-area">When a question is</p>
+                <p class="initial-text-answer-area">submitted, the correct</p>
+                <p class="initial-text-answer-area">answer goes <span class="js-right-or-wrong">here!</span></p>
             </div>
             <div class="buttons">
                 <button id="start" class="btn btn-right" type="button" name="start">Start</button>
