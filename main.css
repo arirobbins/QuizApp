@@ -113,4 +113,12 @@ p {
     float: right;
 }
 
+.js-answer-right {
+    color: green;
+}
+
+.js-answer-wrong {
+    color: red;
+}
+
 

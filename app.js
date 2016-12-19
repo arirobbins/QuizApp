@@ -92,13 +92,28 @@ function renderQuestionArea(state, element){
     //state.currentIndex++;
 }
 
-function renderAnswerArea(state, element){
+function renderAnswerArea(state, element, correct){
     var index = state.currentIndex;
-    var answerAreaText = '<p class="initial-text-answer-area">The correct answer is:</p>' +
-                '<p class="initial-text-answer-area">'+ state.questionSets[index].answer +'</p>' +
-                '<p class="initial-text-answer-area">answer goes <span class="js-right-or-wrong">here!</span></p>'
+    var answerLetter = state.questionSets[index].answer;
+    var answer = state.questionSets[index][answerLetter]; 
+    var answerAreaText = '<p class="initial-text-answer-area">The correct answer is:</p>'
+                        + '<p class="initial-text-answer-area">'
+                        + answerLetter.toUpperCase() 
+                        + ") " + answer +'</p>' 
+                        + '<p class="initial-text-answer-area">Your got it <span class="js-right-or-wrong">'
+                        + correct + '!</span></p>'
     $(".answer-area p").remove();
     $(".answer-area").append(answerAreaText);
+}
+
+function renderScoreArea(state, element) {
+    var answered = state.currentIndex + "/" + state.questionSets.length;
+    var score = state.counterCorrect + " correct, " 
+                + (state.currentIndex - state.counterCorrect)
+                + " incorrect";
+    console.log(state.counterCorrect, state.currentIndex);
+    $("#num-answered").text(answered);
+    $("#score").text(score);
 }
 
 
