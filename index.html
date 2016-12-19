@@ -15,10 +15,10 @@
         </header>
         <main class="large-box">
             <div class="question-area">
-                <p class="initial-text hidden">Welcome to the Quiz App!</p>
-                <p class="initial-text hidden">Are you ready to take the quiz?!</p>
-                <p class="initial-text hidden">(click start to begin)</p>
-                <div id="question-block">
+                <p class="initial-text">Welcome to the Quiz App!</p>
+                <p class="initial-text">Are you ready to take the quiz?!</p>
+                <p class="initial-text">(click start to begin)</p>
+                <div id="question-block" class="hidden">
                     <h2 class="question-identifier">Question <span class="question-identifier"></span></h2>
                     <p id="question-string"></p>
                     <form action="">
@@ -42,8 +42,8 @@
                 </div>
             </div>
             <div class="score-area small-box">
-                <p>Questions Answered: <span id="num-answered"></span></p>
-                <p>Score: <span id="score"></span></p>
+                <p>Questions Answered: <span id="num-answered">0/5</span></p>
+                <p>Score: <span id="score">0 correct, 0 incorrect</span></p>
             </div>
             <div class="answer-area small-box">
                 <p class="initial-text-answer-area">When a question is</p>
@@ -52,7 +52,7 @@
             </div>
             <div class="buttons">
                 <button id="start" class="btn btn-right" type="button" name="start">Start</button>
-                <button id="submit" class="btn btn-left hidden" type="button" name="submit">Submit</button>
+                <button id="submit" class="btn btn-right hidden" type="button" name="submit">Submit</button>
                 <button id="next" class="btn btn-right hidden" type="button" name="next">Next</button>
             </div>
         </main>

@@ -69,6 +69,9 @@ function updateAnswer(state, questionIndex, answer){
 }
 
 // Update all variables
+function updateVariables(state){
+
+}
 
 //Start Over (onLast)
 
@@ -78,9 +81,12 @@ function renderStart(state, element){
 
 }
 
-function renderQuestionArea(state, element){
+function renderQuestionArea(state/*, element*/){
     var index = state.currentIndex;
     //var inputLabel = Object.keys(state.questionSets[index].)
+    $(".initial-text").addClass("hidden");
+    $(".initial-text-answer-area").addClass("hidden");
+    $("#question-block").removeClass("hidden");
     $("span.question-identifier").text(state.currentIndex + 1);
     $("#question-string").text(state.questionSets[index].question);
     //&nbspA) Happy
@@ -92,38 +98,73 @@ function renderQuestionArea(state, element){
     //state.currentIndex++;
 }
 
-function renderAnswerArea(state, element, correct){
+function renderAnswerArea(state/*, element, correct*/){
     var index = state.currentIndex;
     var answerLetter = state.questionSets[index].answer;
     var answer = state.questionSets[index][answerLetter]; 
-    var answerAreaText = '<p class="initial-text-answer-area">The correct answer is:</p>'
-                        + '<p class="initial-text-answer-area">'
-                        + answerLetter.toUpperCase() 
+    var answerAreaText = '<p>The correct answer is:</p>'
+                        + '<p>' + answerLetter.toUpperCase() 
                         + ") " + answer +'</p>' 
-                        + '<p class="initial-text-answer-area">Your got it <span class="js-right-or-wrong">'
-                        + correct + '!</span></p>'
+                        + '<p>Your got it <span class="js-right-or-wrong">'
+                        + state.correct + '!</span></p>';
     $(".answer-area p").remove();
     $(".answer-area").append(answerAreaText);
 }
 
-function renderScoreArea(state, element) {
+function renderScoreArea(state/*, element*/) {
     var answered = state.currentIndex + "/" + state.questionSets.length;
     var score = state.counterCorrect + " correct, " 
                 + (state.currentIndex - state.counterCorrect)
                 + " incorrect";
-    console.log(state.counterCorrect, state.currentIndex);
+    //console.log(state.counterCorrect, state.currentIndex);
     $("#num-answered").text(answered);
     $("#score").text(score);
 }
 
 
 //Event Listeners
-function main(){
-    $("button").attr("name", "start").on("click", function(event){
+function onStart(){
+    $("button#start").on("click", function(event){
         $("#submit").removeClass("hidden");
-        $("#next").removeClass("hidden");
         $("#start").addClass("hidden");
+        renderQuestionArea(state);
     });
+}
+
+function getSetAnswer(state){
+    $("input").on("change", function(event){
+        state.answer = $(this).attr("value");
+    });
+}
+
+function checkAnswer(state){
+    var index = state.currentIndex;
+    if (state.answer == state.questionSets[index].answer){
+        state.questionSets.correct = true;
+    }
+    else{
+        state.questionSets.correct = false;
+    }
+}
+
+function onSubmit(){
+    $("button#submit").on("click", function(event){
+        $("#submit").addClass("hidden");
+        $("#next").removeClass("hidden");
+        getSetAnswer(state);
+        checkAnswer(state);
+        renderAnswerArea(state);
+        renderScoreArea(state);
+    });
+}
+
+function onNext(){
+    ++state.currentIndex;
+}
+
+function main(){
+    onStart();
+    onSubmit();
 }
 
 window.onload = function(){
