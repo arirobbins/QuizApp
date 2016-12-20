@@ -133,22 +133,23 @@ function onStart(){
 
 function getSetAnswer(state){
     $("input").on("change", function(event){
-        state.answer = $(this).attr("value");
+       $(this).attr("value").val();
     });
 }
 
 function checkAnswer(state){
     var index = state.currentIndex;
     if (state.answer == state.questionSets[index].answer){
-        state.questionSets.correct = true;
+        state.questionSets[index].correct = true;
     }
     else{
-        state.questionSets.correct = false;
+        state.questionSets[index].correct = false;
     }
 }
 
 function onSubmit(){
     $("button#submit").on("click", function(event){
+        getSetAnswer(state);
         $("#submit").addClass("hidden");
         $("#next").removeClass("hidden");
         getSetAnswer(state);
